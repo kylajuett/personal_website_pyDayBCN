@@ -24,9 +24,13 @@ extensions = [
     "sphinx_design",
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
+    "notfound.extension",
 ]
 
 # Extension configuration ----------------------------
+## notfound extension -----------------
+notfound_urls_prefix = ""
+
 ## Myst parser ------------------------
 myst_enable_extensions = [
     "colon_fence",
