@@ -25,6 +25,7 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
     "notfound.extension",
+    "ablog",
 ]
 
 # Extension configuration ----------------------------
@@ -45,6 +46,12 @@ myst_enable_extensions = [
     "linkify",
 ]
 myst_url_schemes = ["mailto", "http", "https"]
+
+## ablog ------------------------------
+blog_baseurl = "https://exemple.oriolabrilpla.cat"
+blog_path = "blog"
+post_show_prev_next = False
+fontawesome_included = True
 
 ## Intersphinx ------------------------
 intersphinx_mapping = {
@@ -82,5 +89,19 @@ html_theme_options = {
             "icon": "fa-brands fa-orcid",
             "type": "fontawesome",
         },
+        {
+            "name": "Atom Feed",
+            "url": f"{blog_baseurl}/{blog_path}/atom.xml",
+            "icon": "fa-solid fa-rss",
+            "type": "fontawesome",
+        },
     ],
+}
+ablog_collections = ("author", "category", "tag")
+blog_sidebar = ["navbar-logo.html", "icon-links.html", "sbt-sidebar-nav.html", "ablog/categories.html", "ablog/tagcloud.html", "ablog/archives.html"]
+html_sidebars = {
+    "blog": blog_sidebar,
+    "blog/*": blog_sidebar,
+    **{f"blog/{collection}/**": blog_sidebar for collection in ablog_collections},
+    "blog/posts/**":  ["navbar-logo.html", "icon-links.html", "sbt-sidebar-nav.html", "ablog/postcard.html", "ablog/categories.html", "ablog/tagcloud.html", "ablog/archives.html"],
 }
