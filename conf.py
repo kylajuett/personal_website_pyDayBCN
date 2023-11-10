@@ -1,9 +1,14 @@
 """Sphinx configuration file"""
+import os
 
 # General configuration ------------------------------
 project = "Personal website"
 author = "Oriol Abril Pla"
 copyright = f"2023, {author}"
+language = os.environ.get("WEBSITE_LANGUAGE", "en")
+locale_dirs = ["locales"]
+gettext_uuid = True
+gettext_compact = False
 
 exclude_patterns = [
     ".DS_Store",
@@ -51,7 +56,7 @@ myst_url_schemes = ["mailto", "http", "https"]
 nb_execution_mode = "off"
 
 ## ablog ------------------------------
-blog_baseurl = "https://exemple.oriolabrilpla.cat"
+blog_baseurl = f"https://exemple.oriolabrilpla.cat/{language}"
 blog_path = "blog"
 post_show_prev_next = False
 fontawesome_included = True
@@ -99,6 +104,11 @@ html_theme_options = {
             "type": "fontawesome",
         },
     ],
+    "article_header_start": ["toggle-primary-sidebar", "version-switcher"],
+    "switcher": {
+        "json_url": "https://raw.githubusercontent.com/OriolAbril/personal_website_example/main/switcher.json",
+        "version_match": language,
+    },
 }
 ablog_collections = ("author", "category", "tag")
 blog_sidebar = ["navbar-logo.html", "icon-links.html", "sbt-sidebar-nav.html", "ablog/categories.html", "ablog/tagcloud.html", "ablog/archives.html"]
