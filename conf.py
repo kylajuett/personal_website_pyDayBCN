@@ -3,7 +3,7 @@ import os
 
 # General configuration ------------------------------
 project = "Personal website"
-author = "Oriol Abril Pla"
+author = "Kyla Juett"
 copyright = f"2023, {author}"
 language = os.environ.get("WEBSITE_LANGUAGE", "en")
 locale_dirs = ["locales"]
@@ -73,7 +73,7 @@ html_theme = "sphinx_book_theme"
 html_logo = "images/portrait_placeholder.png"
 html_title = f"{author}'s website"
 html_theme_options = {
-    "repository_url": "https://github.com/OriolAbril/personal_website_example",
+    "repository_url": "https://github.com/kylajuett/personal_website_pyDayBCN",
     "repository_branch": "main",
     "home_page_in_toc": True,
     "use_edit_page_button": False,
@@ -82,14 +82,14 @@ html_theme_options = {
     "icon_links": [
         {
             "name": "GitHub",
-            "url": "https://github.com/OriolAbril", 
+            "url": "https://github.com/kylajuett", 
             "icon": "fa-brands fa-github",
             "type": "fontawesome",
         },
         {
-            "name": "Mastodon",
-            "url": "https://toot.cat/@oriolabril", 
-            "icon": "fa-brands fa-mastodon",
+            "name": "Twitter/X",
+            "url": "https://twitter.com/kylajuett", 
+            "icon": "fa-brands fa-twitter",
             "type": "fontawesome",
             "attributes": {"rel": "me"},
         },
