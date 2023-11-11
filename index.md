@@ -14,6 +14,11 @@ for your blog.
 Everything you learn contributing to Python project docs will be useful to your website,
 and everything you learn setting your website will be useful when contributing to OSS docs.
 
+:::{seealso}
+The source of this website is available at https://github.com/OriolAbril/personal_website_example.
+It is kept minimal and the commits are structured as incremental "atomic" improvements.
+:::
+
 :::{toctree}
 :hidden:
 
